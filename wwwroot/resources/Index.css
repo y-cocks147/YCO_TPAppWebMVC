@@ -33,3 +33,17 @@ a {
 section {
     margin-left: 170px;
 }
+
+table {
+    table-layout: auto;
+    border: 1px solid black;
+}
+
+th, td {
+    border: 1px solid black;
+}
+
+caption {
+    caption-side: top; 
+    text-align: center; 
+}

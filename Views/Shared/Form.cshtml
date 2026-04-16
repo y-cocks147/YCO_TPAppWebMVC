@@ -1,19 +1,114 @@
-﻿<head>
+﻿@model TPLOCAL1.Models.FormModel
+
+<head>
     <title>HN - TP LOCAL</title>
     <link rel="stylesheet" href="~/resources/Index.css" />
 </head>
 <body>
     <header>
         <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
-        <h1>Formulaire TP HN avis</h1>
+        <h1>TP HN Opinion Form</h1>
     </header>
     <nav>
         <ul>
-            <li><a href="/Home/Index">Accueil</a></li>
-            <li><a href="/Home/Index/AvisList">Liste Avis</a></li>
+            <li><a href="/Home/Index">Main Menu</a></li>
+            <li><a href="/Home/Index/OpinionList">Opinion List</a></li>
         </ul>
     </nav>
     <section>
-       
+        <form asp-action="ValidationFormulaire">
+            <table>
+                <caption>Personal Information</caption>
+                <tr>
+                    @* <td>Last Name</td> *@
+                    <td> 
+                        <input />
+                    </td>
+                </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td>
+                        <input />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        @* Todo *@
+                        @* <select asp-for="Gender" asp-items="ViewBag.GenderList">
+                            <option value="" disabled selected>Select a gender</option>
+                        </select> *@
+                        <select>
+                            <option disabled selected>Select a gender</option>
+                            <option value="1">Man</option>
+                            <option value="2">Woman</option>
+                            <option value="3">Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adress</td>
+                    <td>
+                        <input />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Zip Code</td>
+                    <td>
+                        <input />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Town</td>
+                    <td>
+                        <input />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email Adress</td>
+                    <td>
+                        <input />
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <caption>Training information</caption>
+                <tr>
+                    <td>Training Start Date</td>
+                    <td>
+                        <input type="date"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Training Type</td>
+                    <td>
+                        <select>
+                            <option disabled selected>Select a training</option>
+                            <option value="1">Cobol Training</option>
+                            <option value="2">Object Training</option>
+                            <option value="3">Dual Skills Training</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <caption>
+                    Training Reviews
+                </caption>
+                <tr>
+                    <td>Cobol Training</td>
+                    <td>
+                        <input />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Object Training</td>
+                    <td>
+                        <input />
+                    </td>
+                </tr>
+            </table>
+            @* <input type="submit" value="ValidationFormulaire" class="btn btn-primary" /> *@
+        </form>
     </section>
 </body>
