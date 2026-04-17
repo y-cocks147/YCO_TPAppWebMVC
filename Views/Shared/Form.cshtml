@@ -21,7 +21,6 @@
             <table>
                 <caption>Personal Information</caption>
                 <tr>
-                    @* <td>Last Name</td> *@
                     <td><label asp-for="LastName"></label></td>
                     <td>
                         <input asp-for="LastName" />
@@ -36,15 +35,8 @@
                 <tr>
                     <td><label asp-for="Gender"></label></td>
                     <td>
-                        @* Todo *@
-                        @* <select asp-for="Gender" asp-items="ViewBag.GenderList">
-                            <option value="" disabled selected>Select a gender</option>
-                        </select> *@
                         <select asp-for="Gender" asp-items="ViewBag.GenderList">
                             <option value="0" disabled selected>Select a gender</option>
-                            @* <option value="1">Man</option>
-                            <option value="2">Woman</option>
-                            <option value="3">Other</option> *@
                         </select>
                     </td>
                 </tr>
@@ -86,9 +78,6 @@
                     <td>
                         <select asp-for="TrainingType" asp-items="ViewBag.TrainingTypeList">
                             <option value="0" disabled selected>Select a training</option>
-                            @* <option value="1">Cobol Training</option>
-                            <option value="2">Object Training</option>
-                            <option value="3">Dual Skills Training</option> *@
                         </select>
                     </td>
                 </tr>
@@ -110,7 +99,7 @@
                     </td>
                 </tr>
             </table>
-            <input type="submit" value="ValidationFormulaire" class="btn btn-primary" />
+            <input type="submit" value="Validation Formulaire" class="btn btn-primary" />
         </form>
     </section>
 </body>

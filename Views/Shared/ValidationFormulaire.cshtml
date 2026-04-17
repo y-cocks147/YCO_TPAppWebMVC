@@ -30,15 +30,7 @@
             </tr>
             <tr>
                 <td>@Html.DisplayNameFor(model => model.Gender)</td>
-                <td>
-                    @* <select asp-for="Gender" asp-items="ViewBag.GenderList">
-                        <option value="0" disabled selected>Select a gender</option>
-                        @* <option value="1">Man</option>
-                        <option value="2">Woman</option>
-                        <option value="3">Other</option> @
-                    </select> *@
-                    @Html.DisplayFor(model => model.Gender)
-                </td>
+                <td>@Html.DisplayFor(model => model.Gender)</td>
             </tr>
             <tr>
                 <td>@Html.DisplayNameFor(model => model.Address)</td>
@@ -65,15 +57,7 @@
             </tr>
             <tr>
                 <td>@Html.DisplayNameFor(model => model.TrainingType)</td>
-                <td>
-                    @* <select asp-for="TrainingType" asp-items="ViewBag.TrainingTypeList">
-                        <option value="0" disabled selected>Select a training</option>
-                        @* <option value="1">Cobol Training</option>
-                        <option value="2">Object Training</option>
-                        <option value="3">Dual Skills Training</option> @
-                    </select> *@
-                    @Html.DisplayFor(model => model.TrainingType)
-                </td>
+                <td>@Html.DisplayFor(model => model.TrainingType)</td>
             </tr>
         </table>
         <table>

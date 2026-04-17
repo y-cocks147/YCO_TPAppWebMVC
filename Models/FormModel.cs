@@ -39,6 +39,5 @@ namespace TPLOCAL1.Models
         [Required]
         [Display(Name = "Object Training Review")]
         public string? ObjectTrainingOpinion { get; set; }
-
     }
 }
