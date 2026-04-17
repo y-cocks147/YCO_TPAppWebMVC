@@ -1,4 +1,5 @@
 ﻿@model TPLOCAL1.Models.FormModel
+@Html.ValidationSummary(false, "")
 
 <head>
     <title>HN - TP LOCAL</title>
@@ -21,72 +22,73 @@
                 <caption>Personal Information</caption>
                 <tr>
                     @* <td>Last Name</td> *@
-                    <td> 
-                        <input />
-                    </td>
-                </tr>
-                <tr>
-                    <td>First Name</td>
+                    <td><label asp-for="LastName"></label></td>
                     <td>
-                        <input />
+                        <input asp-for="LastName" />
                     </td>
                 </tr>
                 <tr>
-                    <td>Gender</td>
+                    <td><label asp-for="FirstName"></label></td>
+                    <td>
+                        <input asp-for="FirstName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label asp-for="Gender"></label></td>
                     <td>
                         @* Todo *@
                         @* <select asp-for="Gender" asp-items="ViewBag.GenderList">
                             <option value="" disabled selected>Select a gender</option>
                         </select> *@
-                        <select>
-                            <option disabled selected>Select a gender</option>
-                            <option value="1">Man</option>
+                        <select asp-for="Gender" asp-items="ViewBag.GenderList">
+                            <option value="0" disabled selected>Select a gender</option>
+                            @* <option value="1">Man</option>
                             <option value="2">Woman</option>
-                            <option value="3">Other</option>
+                            <option value="3">Other</option> *@
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td>Adress</td>
+                    <td><label asp-for="Address"></label></td>
                     <td>
-                        <input />
+                        <input asp-for="Address" />
                     </td>
                 </tr>
                 <tr>
-                    <td>Zip Code</td>
+                    <td><label asp-for="ZipCode"></label></td>
                     <td>
-                        <input />
+                        <input asp-for="ZipCode" />
                     </td>
                 </tr>
                 <tr>
-                    <td>Town</td>
+                    <td><label asp-for="Town"></label></td>
                     <td>
-                        <input />
+                        <input asp-for="Town" />
                     </td>
                 </tr>
                 <tr>
-                    <td>Email Adress</td>
+                    <td><label asp-for="EmailAddress"></label></td>
                     <td>
-                        <input />
+                        <input asp-for="EmailAddress" />
                     </td>
                 </tr>
             </table>
             <table>
                 <caption>Training information</caption>
                 <tr>
-                    <td>Training Start Date</td>
+                    <td><label asp-for="TrainingStartDate"></label></td>
                     <td>
-                        <input type="date"/>
+                        <input asp-for="TrainingStartDate" type="date" />
                     </td>
                 </tr>
                 <tr>
-                    <td>Training Type</td>
+                    <td><label asp-for="TrainingType"></label></td>
                     <td>
-                        <select>
-                            <option disabled selected>Select a training</option>
-                            <option value="1">Cobol Training</option>
+                        <select asp-for="TrainingType" asp-items="ViewBag.TrainingTypeList">
+                            <option value="0" disabled selected>Select a training</option>
+                            @* <option value="1">Cobol Training</option>
                             <option value="2">Object Training</option>
-                            <option value="3">Dual Skills Training</option>
+                            <option value="3">Dual Skills Training</option> *@
                         </select>
                     </td>
                 </tr>
@@ -96,19 +98,19 @@
                     Training Reviews
                 </caption>
                 <tr>
-                    <td>Cobol Training</td>
+                    <td><label asp-for="CobolTrainingOpinion"></label></td>
                     <td>
-                        <input />
+                        <input asp-for="CobolTrainingOpinion" />
                     </td>
                 </tr>
                 <tr>
-                    <td>Object Training</td>
+                    <td><label asp-for="ObjectTrainingOpinion"></label></td>
                     <td>
-                        <input />
+                        <input asp-for="ObjectTrainingOpinion" />
                     </td>
                 </tr>
             </table>
-            @* <input type="submit" value="ValidationFormulaire" class="btn btn-primary" /> *@
+            <input type="submit" value="ValidationFormulaire" class="btn btn-primary" />
         </form>
     </section>
 </body>

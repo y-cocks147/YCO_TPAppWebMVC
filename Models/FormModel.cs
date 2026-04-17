@@ -14,7 +14,8 @@ namespace TPLOCAL1.Models
         [Required]
         public Gender Gender { get; set; }
         [Required]
-        public string? Adress { get; set; }
+        [StringLength(100, MinimumLength = 5)] // longest address is 85 char -> https://en.wikipedia.org/wiki/List_of_long_place_names
+        public string? Address { get; set; }
         [Required]
         [Display(Name = "Zip Code")]
         [RegularExpression(@"^\d{5}$")] // ^\d{5}(?:-\d{4})?$ for optional 4 digits
@@ -22,9 +23,9 @@ namespace TPLOCAL1.Models
         [Required]
         public string? Town { get; set; }
         [Required]
-        [Display(Name = "Email Adress")]
+        [Display(Name = "Email Address")]
         [RegularExpression(@"^([\w]+)@([\w]+)\.([\w]+)$")]
-        public string? EmailAdress { get; set; }
+        public string? EmailAddress { get; set; }
         [Required]
         [Display(Name = "Training Start Date")]
         [DataType(DataType.Date)]
@@ -36,7 +37,7 @@ namespace TPLOCAL1.Models
         [Display(Name = "Cobol Training Review")]
         public string? CobolTrainingOpinion { get; set; }
         [Required]
-        [Display(Name = "C# Training Review")]
+        [Display(Name = "Object Training Review")]
         public string? ObjectTrainingOpinion { get; set; }
 
     }
