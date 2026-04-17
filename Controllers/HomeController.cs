@@ -24,8 +24,11 @@ namespace TPLOCAL1.Controllers
                 switch (id)
                 {
                     case "OpinionList":
-                        //TODO : code reading of the xml files provide
-                        return View(id);
+                        //TODO DONE: code reading of the xml files provide
+                        var getOpinionList = new OpinionList();
+                        var listOpinion = getOpinionList.GetAvis(@"XlmFile\DataAvis.xml");
+                        //AppContext.BaseDirectory 
+                        return View(id, listOpinion);
                     case "Form":
                         //TODO DONE : call the Form view with data model empty
                         ViewData["GenderList"] = ConvertEnumToItem.GetGenderSelectList();
@@ -115,10 +118,7 @@ namespace TPLOCAL1.Controllers
                 return View("Form", formModel);
             }
 
-            
-
             return View("ValidationFormulaire", formModel);
-
         }
     }
 }

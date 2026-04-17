@@ -1,5 +1,52 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<TPLOCAL1.Models.Opinion> 
 @{
+    
 }
+
+<head>
+    <title>HN - TP LOCAL</title>
+    <link rel="stylesheet" href="~/resources/Index.css" />
+</head>
+<body>
+    <header>
+        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <h1>Opinion List</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/Home/Index/Form">Form</a></li>
+            <li><a href="/Home/Index/OpinionList">Opinion List</a></li>
+        </ul>
+    </nav>
+    <section>
+        @if (Model != null &&  Model.Count() > 0)
+        {
+            <table>
+                <caption>Training information</caption>
+                <tr>
+                    @* <td>@Html.DisplayNameFor(model => model.FirstOrDefault().LastName)</td>
+                    <td>@Html.DisplayNameFor(model => model.FirstOrDefault().FirstName)</td>
+                    <td>@Html.DisplayNameFor(model => model.FirstOrDefault().OpinionGiven)</td> *@
+                    <td>Last Name</td>
+                    <td>First Name</td>
+                    <td>Opinion Given</td>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.LastName</td>
+                        <td>@item.FirstName</td>
+                        <td class="@(item.OpinionGiven == "O" ? "yes" : "no")">
+                            @(item.OpinionGiven == "O" ? "Yes" : "No")
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <p>No Opinion Given</p>
+        }
+
+    </section>
+</body>
