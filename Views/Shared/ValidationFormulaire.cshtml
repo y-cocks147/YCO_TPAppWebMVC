@@ -1,0 +1,97 @@
+﻿@model TPLOCAL1.Models.FormModel
+
+<head>
+    <title>HN - TP LOCAL</title>
+    <link rel="stylesheet" href="~/resources/Index.css" />
+</head>
+<body>
+    <header>
+        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <h1>TP HN Validation Page</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/Home/Index">Main Menu</a></li>
+            <li><a href="/Home/Index/OpinionList">Opinion List</a></li>
+        </ul>
+    </nav>
+    <section>
+        <p>Your form has been taken into account</p>
+        
+        <table>
+            <caption>Personal Information</caption>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.LastName)</td>
+                <td>@Html.DisplayFor(model => model.LastName)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.FirstName)</td>
+                <td>@Html.DisplayFor(model => model.FirstName)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Gender)</td>
+                <td>
+                    @* <select asp-for="Gender" asp-items="ViewBag.GenderList">
+                        <option value="0" disabled selected>Select a gender</option>
+                        @* <option value="1">Man</option>
+                        <option value="2">Woman</option>
+                        <option value="3">Other</option> @
+                    </select> *@
+                    @Html.DisplayFor(model => model.Gender)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Address)</td>
+                <td>@Html.DisplayFor(model => model.Address)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.ZipCode)</td>
+                <td>@Html.DisplayFor(model => model.ZipCode)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Town)</td>
+                <td>@Html.DisplayFor(model => model.Town)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.EmailAddress)</td>
+                <td>@Html.DisplayFor(model => model.EmailAddress)</td>
+            </tr>
+        </table>
+        <table>
+            <caption>Training information</caption>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.TrainingStartDate)</td>
+                <td>@Html.DisplayFor(model => model.TrainingStartDate)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.TrainingType)</td>
+                <td>
+                    @* <select asp-for="TrainingType" asp-items="ViewBag.TrainingTypeList">
+                        <option value="0" disabled selected>Select a training</option>
+                        @* <option value="1">Cobol Training</option>
+                        <option value="2">Object Training</option>
+                        <option value="3">Dual Skills Training</option> @
+                    </select> *@
+                    @Html.DisplayFor(model => model.TrainingType)
+                </td>
+            </tr>
+        </table>
+        <table>
+            <caption>
+                Training Reviews
+            </caption>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.CobolTrainingOpinion)</td>
+                <td>@Html.DisplayFor(model => model.CobolTrainingOpinion)</td>
+            </tr>
+            <tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.ObjectTrainingOpinion)</td>
+                <td>@Html.DisplayFor(model => model.ObjectTrainingOpinion)</td>
+            </tr>
+            </tr>
+        </table>
+            
+        
+    </section>
+</body>

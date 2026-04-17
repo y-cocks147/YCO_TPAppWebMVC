@@ -27,7 +27,7 @@ namespace TPLOCAL1.Controllers
                         //TODO : code reading of the xml files provide
                         return View(id);
                     case "Form":
-                        //TODO : call the Form view with data model empty
+                        //TODO DONE : call the Form view with data model empty
                         ViewData["GenderList"] = ConvertEnumToItem.GetGenderSelectList();
                         ViewData["TrainingTypeList"] = ConvertEnumToItem.GetTrainingTypeSelectList();
                         return View(id);
@@ -45,7 +45,7 @@ namespace TPLOCAL1.Controllers
                                                         "TrainingStartDate,TrainingType," +
                                                         "CobolTrainingOpinion,ObjectTrainingOpinion")] FormModel formModel)
         {
-            //TODO : test if model's fields are set
+            //TODO DONE : test if model's fields are set
             //if not, display an error message and stay on the form page
             //else, call ValidationForm with the datas set by the user
             if (formModel == null)
@@ -117,7 +117,7 @@ namespace TPLOCAL1.Controllers
 
             
 
-            return View("ValidatedForm", formModel);
+            return View("ValidationFormulaire", formModel);
 
         }
     }

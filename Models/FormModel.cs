@@ -14,7 +14,7 @@ namespace TPLOCAL1.Models
         [Required]
         public Gender Gender { get; set; }
         [Required]
-        [StringLength(100, MinimumLength = 5)] // longest address is 85 char -> https://en.wikipedia.org/wiki/List_of_long_place_names
+        [StringLength(100, MinimumLength = 5)] // longest address is 85 char according to https://en.wikipedia.org/wiki/List_of_long_place_names
         public string? Address { get; set; }
         [Required]
         [Display(Name = "Zip Code")]

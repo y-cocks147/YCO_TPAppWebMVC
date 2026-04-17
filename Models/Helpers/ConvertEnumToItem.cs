@@ -18,7 +18,7 @@ namespace TPLOCAL1.Models.Helpers
                 genderConvertEnum.Add(new ConvertEnumToItem
                 {
                     Value = (int)gender,
-                    Text = AddSpacesToString(gender.ToString())
+                    Text = gender.ToString()
                 });
 
             return new SelectList(genderConvertEnum, "Value", "Text");
@@ -31,7 +31,7 @@ namespace TPLOCAL1.Models.Helpers
                 trainingTypeConvertEnum.Add(new ConvertEnumToItem
                 {
                     Value = (int)trainingType,
-                    Text = AddSpacesToString(trainingType.ToString())
+                    Text = trainingType.ToString()
                 });
 
             return new SelectList(trainingTypeConvertEnum, "Value", "Text");
