@@ -1,105 +1,94 @@
 ﻿@model FormModel
 @Html.ValidationSummary(false, "")
+@{
+    ViewData["Title"] = "TP HN Opinion Form";
+    ViewData["MenuTopLink"] = "/Home/Index";
+    ViewData["MenuBottomLink"] = "/Home/Index/OpinionList";
+    ViewData["MenuTopText"] = "Main Menu";
+    ViewData["MenuBottomText"] = "Opinion List";
+}
 
-<head>
-    <title>HN - TP LOCAL</title>
-    <link rel="stylesheet" href="~/resources/Index.css" />
-</head>
-<body>
-    <header>
-        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
-        <h1>TP HN Opinion Form</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="/Home/Index">Main Menu</a></li>
-            <li><a href="/Home/Index/OpinionList">Opinion List</a></li>
-        </ul>
-    </nav>
-    <section>
-        <form asp-action="ValidationFormulaire">
-            <table>
-                <caption>Personal Information</caption>
-                <tr>
-                    <td><label asp-for="LastName"></label></td>
-                    <td>
-                        <input asp-for="LastName" />
-                    </td>
-                </tr>
-                <tr>
-                    <td><label asp-for="FirstName"></label></td>
-                    <td>
-                        <input asp-for="FirstName" />
-                    </td>
-                </tr>
-                <tr>
-                    <td><label asp-for="Gender"></label></td>
-                    <td>
-                        <select asp-for="Gender" asp-items="ViewBag.GenderList">
-                            <option value="0" disabled selected>Select a gender</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label asp-for="Address"></label></td>
-                    <td>
-                        <input asp-for="Address" />
-                    </td>
-                </tr>
-                <tr>
-                    <td><label asp-for="ZipCode"></label></td>
-                    <td>
-                        <input asp-for="ZipCode" />
-                    </td>
-                </tr>
-                <tr>
-                    <td><label asp-for="Town"></label></td>
-                    <td>
-                        <input asp-for="Town" />
-                    </td>
-                </tr>
-                <tr>
-                    <td><label asp-for="EmailAddress"></label></td>
-                    <td>
-                        <input asp-for="EmailAddress" />
-                    </td>
-                </tr>
-            </table>
-            <table>
-                <caption>Training information</caption>
-                <tr>
-                    <td><label asp-for="TrainingStartDate"></label></td>
-                    <td>
-                        <input asp-for="TrainingStartDate" type="date" />
-                    </td>
-                </tr>
-                <tr>
-                    <td><label asp-for="TrainingType"></label></td>
-                    <td>
-                        <select asp-for="TrainingType" asp-items="ViewBag.TrainingTypeList">
-                            <option value="0" disabled selected>Select a training</option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-            <table>
-                <caption>
-                    Training Reviews
-                </caption>
-                <tr>
-                    <td><label asp-for="CobolTrainingOpinion"></label></td>
-                    <td>
-                        <input asp-for="CobolTrainingOpinion" />
-                    </td>
-                </tr>
-                <tr>
-                    <td><label asp-for="ObjectTrainingOpinion"></label></td>
-                    <td>
-                        <input asp-for="ObjectTrainingOpinion" />
-                    </td>
-                </tr>
-            </table>
-            <input type="submit" value="Validation Formulaire" class="btn btn-primary" />
-        </form>
-    </section>
-</body>
+<form asp-action="ValidationFormulaire">
+    <table>
+        <caption>Personal Information</caption>
+        <tr>
+            <td><label asp-for="LastName"></label></td>
+            <td>
+                <input asp-for="LastName" />
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="FirstName"></label></td>
+            <td>
+                <input asp-for="FirstName" />
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Gender"></label></td>
+            <td>
+                <select asp-for="Gender" asp-items="ViewBag.GenderList">
+                    <option value="0" disabled selected>Select a gender</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Address"></label></td>
+            <td>
+                <input asp-for="Address" />
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="ZipCode"></label></td>
+            <td>
+                <input asp-for="ZipCode" />
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="Town"></label></td>
+            <td>
+                <input asp-for="Town" />
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="EmailAddress"></label></td>
+            <td>
+                <input asp-for="EmailAddress" />
+            </td>
+        </tr>
+    </table>
+    <table>
+        <caption>Training information</caption>
+        <tr>
+            <td><label asp-for="TrainingStartDate"></label></td>
+            <td>
+                <input asp-for="TrainingStartDate" type="date" />
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="TrainingType"></label></td>
+            <td>
+                <select asp-for="TrainingType" asp-items="ViewBag.TrainingTypeList">
+                    <option value="0" disabled selected>Select a training</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <caption>
+            Training Reviews
+        </caption>
+        <tr>
+            <td><label asp-for="CobolTrainingOpinion"></label></td>
+            <td>
+                <input asp-for="CobolTrainingOpinion" />
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="ObjectTrainingOpinion"></label></td>
+            <td>
+                <input asp-for="ObjectTrainingOpinion" />
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Validation Formulaire" class="btn btn-primary" />
+</form>

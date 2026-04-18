@@ -1,46 +1,34 @@
 ﻿@model IEnumerable<Opinion> 
+@{
+    ViewData["Title"] = "Opinion List";
+    ViewData["MenuTopLink"] = "/Home/Index";
+    ViewData["MenuBottomLink"] = "/Home/Index/Form";
+    ViewData["MenuTopText"] = "Main Menu";
+    ViewData["MenuBottomText"] = "Form";
+}
 
-<head>
-    <title>HN - TP LOCAL</title>
-    <link rel="stylesheet" href="~/resources/Index.css" />
-</head>
-<body>
-    <header>
-        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
-        <h1>Opinion List</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="/Home/Index/">Main Menu</a></li>
-            <li><a href="/Home/Index/Form">Form</a></li>
-        </ul>
-    </nav>
-    <section>
-        @if (Model != null &&  Model.Count() > 0)
+@if (Model != null && Model.Count() > 0)
+{
+    <table>
+        <caption>Training information</caption>
+        <tr>
+            <td>Last Name</td>
+            <td>First Name</td>
+            <td>Opinion Given</td>
+        </tr>
+        @foreach (var item in Model)
         {
-            <table>
-                <caption>Training information</caption>
-                <tr>
-                    <td>Last Name</td>
-                    <td>First Name</td>
-                    <td>Opinion Given</td>
-                </tr>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@item.LastName</td>
-                        <td>@item.FirstName</td>
-                        <td class="@(item.OpinionGiven == "O" ? "yes" : "no")">
-                            @(item.OpinionGiven == "O" ? "Yes" : "No")
-                        </td>
-                    </tr>
-                }
-            </table>
+            <tr>
+                <td>@item.LastName</td>
+                <td>@item.FirstName</td>
+                <td class="@(item.OpinionGiven == "O" ? "yes" : "no")">
+                    @(item.OpinionGiven == "O" ? "Yes" : "No")
+                </td>
+            </tr>
         }
-        else
-        {
-            <p>No Opinion Given</p>
-        }
-
-    </section>
-</body>
+    </table>
+}
+else
+{
+    <p>No Opinion Given</p>
+}

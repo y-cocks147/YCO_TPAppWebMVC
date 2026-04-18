@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HN - TP LOCAL</title>
+    <link rel="stylesheet" href="~/resources/Index.css" />
+</head>
+<body>
+    <header>
+        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <h1>@ViewBag.Title</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="@ViewBag.MenuTopLink">@ViewBag.MenuTopText</a></li>
+            <li><a href="@ViewBag.MenuBottomLink">@ViewBag.MenuBottomText</a></li>
+        </ul>
+    </nav>
+    <section>
+        @RenderBody()
+    </section>
+</body>
+</html>

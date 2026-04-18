@@ -1,22 +1,12 @@
-﻿<head>
-    <title>HN - TP LOCAL</title>
-    <link rel="stylesheet" href="~/resources/Index.css" />
-</head>
-<body>
-    <header>
-        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
-        <h1>Welcome to the HN .Net MVC pratical work</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="/Home/Index/Form">Fill in the form</a></li>
-            <li><a href="/Home/Index/OpinionList">Opinion List</a></li>
-        </ul>
-    </nav>
-    <section>
-        <p>
-            <a href="/Home/Index/Form">Fill out form </a>
-        </p>
-    </section>
-</body>
+﻿@{
+    ViewData["Title"] = "Welcome to the HN .Net MVC pratical work";
+    ViewData["MenuTopLink"] = "/Home/Index/Form";
+    ViewData["MenuBottomLink"] = "/Home/Index/OpinionList";
+    ViewData["MenuTopText"] = "Fill in the form";
+    ViewData["MenuBottomText"] = "Opinion List";
+}
+
+<p>
+    <a href="/Home/Index/Form">Fill out form </a>
+</p>
 
