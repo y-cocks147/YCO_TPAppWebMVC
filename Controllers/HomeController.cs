@@ -31,8 +31,9 @@ namespace TPLOCAL1.Controllers
                         return View(id, listOpinion);
                     case "Form":
                         //TODO DONE : call the Form view with data model empty
-                        ViewData["GenderList"] = ConvertEnumToItem.GetGenderSelectList();
-                        ViewData["TrainingTypeList"] = ConvertEnumToItem.GetTrainingTypeSelectList();
+                        var selectListFromEnum = new GenerateSelectList();
+                        ViewData["GenderList"] = selectListFromEnum.GenderSelectList;
+                        ViewData["TrainingTypeList"] = selectListFromEnum.TrainingTypeSelectList;
                         return View(id);
                     default:
                         //retourn to the Index view (see routing in Program.cs)
@@ -134,8 +135,9 @@ namespace TPLOCAL1.Controllers
 
             if(!isModelValid)
             {
-                ViewData["GenderList"] = ConvertEnumToItem.GetGenderSelectList();
-                ViewData["TrainingTypeList"] = ConvertEnumToItem.GetTrainingTypeSelectList();
+                var selectListFromEnum = new GenerateSelectList();
+                ViewData["GenderList"] = selectListFromEnum.GenderSelectList;
+                ViewData["TrainingTypeList"] = selectListFromEnum.TrainingTypeSelectList;
                 return View("Form", formModel);
             }
             
