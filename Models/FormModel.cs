@@ -29,6 +29,7 @@ namespace TPLOCAL1.Models
         [Required]
         [Display(Name = "Training Start Date")]
         [DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{dd/MM/yyyy}")]
         public DateTime TrainingStartDate { get; set; }
         [Required]
         [Display(Name = "Training Type")]
