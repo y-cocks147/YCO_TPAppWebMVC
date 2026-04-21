@@ -45,9 +45,7 @@ namespace TPLOCAL1.Controllers
 
         //methode to send datas from form to validation page
         [HttpPost]
-        public ActionResult ValidationFormulaire([Bind("LastName,FirstName,Gender,Address,ZipCode,Town,EmailAddress," +
-                                                        "TrainingStartDate,TrainingType," +
-                                                        "CobolTrainingOpinion,ObjectTrainingOpinion")] FormModel formModel)
+        public ActionResult ValidationFormulaire(FormModel formModel)
         {
             //TODO DONE : test if model's fields are set
             //if not, display an error message and stay on the form page
@@ -57,83 +55,83 @@ namespace TPLOCAL1.Controllers
                 return View("Form");
             }
 
-            bool isModelValid = true;
-            if (formModel.LastName == null)
-            {
-                ModelState.AddModelError("", "LastName is required");
-                isModelValid = false;
-            }
+            //bool isModelValid = true;
+            //if (formModel.LastName == null)
+            //{
+            //    ModelState.AddModelError("", "LastName is required");
+            //    isModelValid = false;
+            //}
 
-            if (formModel.FirstName == null)
-            {
-                ModelState.AddModelError("", "FirstName is required");
-                isModelValid = false;
-            }
+            //if (formModel.FirstName == null)
+            //{
+            //    ModelState.AddModelError("", "FirstName is required");
+            //    isModelValid = false;
+            //}
 
-            if (formModel.Gender == 0)
-            {
-                ModelState.AddModelError("", "Select an option for Gender");
-                isModelValid = false;
-            }
+            //if (formModel.Gender == 0)
+            //{
+            //    ModelState.AddModelError("", "Select an option for Gender");
+            //    isModelValid = false;
+            //}
 
-            if (formModel.Address == null || formModel.Address.Length < 5)
-            {
-                ModelState.AddModelError("", "Address too short");
-                isModelValid = false;
-            }
+            //if (formModel.Address == null || formModel.Address.Length < 5)
+            //{
+            //    ModelState.AddModelError("", "Address too short");
+            //    isModelValid = false;
+            //}
 
-            Regex zipCodeRegex = new Regex(@"^\d{5}$"); // ! regular expression already used in form desciption. might put it in a class for easier access 
-            if (formModel.ZipCode == null || !zipCodeRegex.IsMatch(formModel.ZipCode))
-            {
-                ModelState.AddModelError("", "ZipCode is not valid");
-                isModelValid = false;
-            }
+            //Regex zipCodeRegex = new Regex(@"^\d{5}$"); // ! regular expression already used in form desciption. might put it in a class for easier access 
+            //if (formModel.ZipCode == null || !zipCodeRegex.IsMatch(formModel.ZipCode))
+            //{
+            //    ModelState.AddModelError("", "ZipCode is not valid");
+            //    isModelValid = false;
+            //}
 
-            if (formModel.Town == null)
-            {
-                ModelState.AddModelError("", "Town is required");
-                isModelValid = false;
-            }
+            //if (formModel.Town == null)
+            //{
+            //    ModelState.AddModelError("", "Town is required");
+            //    isModelValid = false;
+            //}
 
-            Regex emailAdressRegex = new Regex(@"^([\w]+)@([\w]+)\.([\w]+)$"); // ! regular expression already used in form desciption. might put it in a class for easier access 
-            if (formModel.EmailAddress == null || !emailAdressRegex.IsMatch(formModel.EmailAddress))
-            {
-                ModelState.AddModelError("", "EmailAddress is not valid");
-                isModelValid = false;
-            }
+            //Regex emailAdressRegex = new Regex(@"^([\w]+)@([\w]+)\.([\w]+)$"); // ! regular expression already used in form desciption. might put it in a class for easier access 
+            //if (formModel.EmailAddress == null || !emailAdressRegex.IsMatch(formModel.EmailAddress))
+            //{
+            //    ModelState.AddModelError("", "EmailAddress is not valid");
+            //    isModelValid = false;
+            //}
 
-            if (formModel.TrainingStartDate == DateTime.MinValue)
-            {
-                ModelState.AddModelError("", "TrainingStartDate is required");
-                isModelValid = false;
-            }
+            //if (formModel.TrainingStartDate == DateTime.MinValue)
+            //{
+            //    ModelState.AddModelError("", "TrainingStartDate is required");
+            //    isModelValid = false;
+            //}
 
-            DateTime refDate = new(2021, 1, 1); // might put it in a class for easier acces  
-            if (DateTime.Compare(formModel.TrainingStartDate.Date, refDate) > 0)
-            {
-                ModelState.AddModelError("", $"TrainingStartDate should be before {refDate.ToString("dd/MM/yyyy")}");
-                isModelValid = false;
-            }
+            //DateTime refDate = new(2021, 1, 1); // might put it in a class for easier acces  
+            //if (DateTime.Compare(formModel.TrainingStartDate.Date, refDate) > 0)
+            //{
+            //    ModelState.AddModelError("", $"TrainingStartDate should be before {refDate.ToString("dd/MM/yyyy")}");
+            //    isModelValid = false;
+            //}
 
-            if (formModel.TrainingType == 0)
-            {
-                ModelState.AddModelError("", "Select an option for TrainingType");
-                isModelValid = false;
-            }
+            //if (formModel.TrainingType == 0)
+            //{
+            //    ModelState.AddModelError("", "Select an option for TrainingType");
+            //    isModelValid = false;
+            //}
 
-            if (formModel.CobolTrainingOpinion == null)
-            {
-                ModelState.AddModelError("", "CobolTrainingOpinion is required");
-                isModelValid = false;
-            }
+            //if (formModel.CobolTrainingOpinion == null)
+            //{
+            //    ModelState.AddModelError("", "CobolTrainingOpinion is required");
+            //    isModelValid = false;
+            //}
 
-            if (formModel.ObjectTrainingOpinion == null)
-            {
-                ModelState.AddModelError("", "ObjectTrainingOpinion is required");
-                isModelValid = false;
-            }
+            //if (formModel.ObjectTrainingOpinion == null)
+            //{
+            //    ModelState.AddModelError("", "ObjectTrainingOpinion is required");
+            //    isModelValid = false;
+            //}
 
-            if(!isModelValid)
+            if(!ModelState.IsValid)
             {
                 var selectListFromEnum = new GenerateSelectList();
                 ViewData["GenderList"] = selectListFromEnum.GenderSelectList;

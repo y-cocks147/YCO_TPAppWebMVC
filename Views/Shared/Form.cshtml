@@ -1,5 +1,5 @@
 ﻿@model FormModel
-@Html.ValidationSummary(false, "")
+@* @Html.ValidationSummary(false, "") *@
 @{
     ViewData["Title"] = "TP HN Opinion Form";
     ViewData["MenuTopLink"] = "/Home/Index";
@@ -15,12 +15,14 @@
             <td><label asp-for="LastName"></label></td>
             <td>
                 <input asp-for="LastName" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
             </td>
         </tr>
         <tr>
             <td><label asp-for="FirstName"></label></td>
             <td>
                 <input asp-for="FirstName" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
             </td>
         </tr>
         <tr>
@@ -29,30 +31,35 @@
                 <select asp-for="Gender" asp-items="ViewBag.GenderList">
                     <option value="0" disabled selected>Select a gender</option>
                 </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
             </td>
         </tr>
         <tr>
             <td><label asp-for="Address"></label></td>
             <td>
                 <input asp-for="Address" />
+                <span asp-validation-for="Address" class="text-danger"></span>
             </td>
         </tr>
         <tr>
             <td><label asp-for="ZipCode"></label></td>
             <td>
                 <input asp-for="ZipCode" />
+                <span asp-validation-for="ZipCode" class="text-danger"></span>
             </td>
         </tr>
         <tr>
             <td><label asp-for="Town"></label></td>
             <td>
                 <input asp-for="Town" />
+                <span asp-validation-for="Town" class="text-danger"></span>
             </td>
         </tr>
         <tr>
             <td><label asp-for="EmailAddress"></label></td>
             <td>
                 <input asp-for="EmailAddress" />
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
             </td>
         </tr>
     </table>
@@ -62,6 +69,7 @@
             <td><label asp-for="TrainingStartDate"></label></td>
             <td>
                 <input asp-for="TrainingStartDate" type="date" />
+                <span asp-validation-for="TrainingStartDate" class="text-danger"></span>
             </td>
         </tr>
         <tr>
@@ -70,6 +78,7 @@
                 <select asp-for="TrainingType" asp-items="ViewBag.TrainingTypeList">
                     <option value="0" disabled selected>Select a training</option>
                 </select>
+                <span asp-validation-for="TrainingType" class="text-danger"></span>
             </td>
         </tr>
     </table>
@@ -81,12 +90,14 @@
             <td><label asp-for="CobolTrainingOpinion"></label></td>
             <td>
                 <input asp-for="CobolTrainingOpinion" />
+                <span asp-validation-for="CobolTrainingOpinion" class="text-danger"></span>
             </td>
         </tr>
         <tr>
             <td><label asp-for="ObjectTrainingOpinion"></label></td>
             <td>
                 <input asp-for="ObjectTrainingOpinion" />
+                <span asp-validation-for="ObjectTrainingOpinion" class="text-danger"></span>
             </td>
         </tr>
     </table>
