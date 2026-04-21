@@ -13,6 +13,7 @@ namespace TPLOCAL1.Models
         [Display(Name = "First Name")]
         public string? FirstName { get; set; } // First Name / Forename
         [Required(ErrorMessage = "Select an option for Gender")]
+        [GenderEnumValidation()]
         public Gender Gender { get; set; }
         [Required]
         [StringLength(100, ErrorMessage = "Address too short", MinimumLength = 5)] // longest address is 85 char according to https://en.wikipedia.org/wiki/List_of_long_place_names
@@ -35,6 +36,7 @@ namespace TPLOCAL1.Models
         public DateTime? TrainingStartDate { get; set; }
         [Required]
         [Display(Name = "Training Type")]
+        [TrainingTypeEnumValidation()]
         public TrainingType TrainingType { get; set; }
         [Display(Name = "Cobol Training Review")]
         public string? CobolTrainingOpinion { get; set; }
